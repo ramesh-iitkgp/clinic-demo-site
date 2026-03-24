@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional healthcare clinic demo website - Grow your medical practice online">
+    <meta property="og:title" content="Clinic Demo | Professional Healthcare Services">
+    <meta property="og:description" content="Showcase your clinic services with this professional demo website">
+    <title id="page-title">Clinic - Professional Demo Site</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #90caf9;
+        }
+        
+        .contact-btn {
+            background: #ff6f00;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            background: #e65100;
+            transform: scale(1.05);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: #ff6f00;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #e65100;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #1e88e5;
+        }
+        
+        .btn-secondary:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .menu-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e88e5;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: 0.3s ease;
+            border-left: 4px solid #1e88e5;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .menu-item h3 {
+            color: #1e88e5;
+            margin-bottom: 0.5rem;
+        }
+        
+        .menu-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .price {
+            color: #ff6f00;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+        
+        .gallery-section {
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .location-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .location-info h3 {
+            color: #1e88e5;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-item strong {
+            color: #1e88e5;
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 350px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        footer {
+            background: #1e88e5;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: #90caf9;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #20BA58;
+            transform: scale(1.05);
+        }
+        
+        .demo-badge {
+            background: rgba(30, 136, 229, 0.1);
+            color: #1e88e5;
+            padding: 1rem;
+            border-left: 4px solid #1e88e5;
+            margin: 1rem 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo" id="business-name">Clinic Demo</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Facilities</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#contact" class="contact-btn" id="contact-nav">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 id="hero-title">Welcome to Your Clinic</h1>
+            <p id="hero-subtitle">Professional healthcare services for your family</p>
+            <div class="cta-buttons">
+                <a href="#services" class="btn btn-primary">View Services</a>
+                <a href="#contact" class="btn btn-secondary">Book Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="margin-top: 2rem;">
+        <div class="demo-badge">
+            <strong>💡 This is a professional demo website</strong><br>
+            This template shows what your clinic can look like online. Add your services, doctors info, and contact details to go live!
+        </div>
+    </div>
+
+    <section class="menu-section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="menu-grid" id="menu-grid">
+                <!-- Services will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Facilities</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Gallery items will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="location-section" id="location">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3 id="location-title">Clinic Location</h3>
+                    <div class="info-item">
+                        <strong>Address:</strong><br>
+                        <span id="address">Enter your address here</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Phone:</strong><br>
+                        <span id="phone">+91 XXXXXXXXX</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Hours:</strong><br>
+                        <span id="hours">Mon-Sat: 9 AM - 9 PM | Sun: 10 AM - 6 PM</span>
+                    </div>
+                    <div class="info-item">
+                        <a href="#" id="whatsapp-link" class="whatsapp-btn">
+                            💬 Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe id="map-embed" src="" style="display: none;"></iframe>
+                    <div id="map-placeholder" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; height: 100%; color: #999;">
+                        Map will load here with location
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="padding: 4rem 2rem; background: #f8f9fa; text-align: center;">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                Need healthcare services? Contact us or book an appointment today!
+            </p>
+            <div class="cta-buttons">
+                <a href="#" id="final-whatsapp" class="btn btn-primary">Chat on WhatsApp</a>
+                <a href="#" id="phone-call" class="btn btn-secondary">Call Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3 id="footer-name">Clinic</h3>
+            <div class="footer-links">
+                <a href="mailto:contact@example.com" id="footer-email">Email</a>
+                <a href="#" id="footer-whatsapp">WhatsApp</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <p style="margin-top: 1.5rem; opacity: 0.8;">
+                Made with ❤️ to help healthcare providers grow online | Free Demo Website
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/inject-data.js"></script>
+</body>
+</html>
